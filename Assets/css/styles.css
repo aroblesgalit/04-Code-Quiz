@@ -1,6 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto Slab', serif;
 }
 
+body {
+    background-color: #fff;
+}
+
+
+/* Header */
+header {
+    background-color: #2B90D9;
+    height: 82px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+#branding {
+    display: block;
+    color: #D9E1E8;
+    font-size: 40px;
+    align-self: center;
+}
+
+.secondaryButtons {
+    background-color: #2B90D9;
+    color: #D9E1E8;
+    border: 1px solid #D9E1E8;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+#highscoresButton {
+    display: none;
+    height: 40px;
+    width: 150px;
+    align-self: center;
+    font-size: 14px;
+}
+
+#timer {
+    width: 94px;
+    height: 94px;
+    border-radius: 47px;
+    background-color: #282C37;
+    border: 1px solid #D9E1E8;
+    margin-top: 20px;
+    color: #D9E1E8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#time {
+    font-size: 36px;
+    line-height: 1;
+}
+
+#timerLabel {
+    font-size: 14px;
+    opacity: .6;
+}
