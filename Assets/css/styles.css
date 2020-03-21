@@ -38,7 +38,7 @@ body {
 }
 
 #highscoresButton {
-    display: none; /* block or none */
+    display: block; /* block or none */
     height: 40px;
     width: 150px;
     align-self: center;
@@ -71,7 +71,7 @@ header {
 }
 
 #branding {
-    display: block; /* block or none */
+    display: none; /* block or none */
     color: #D9E1E8;
     font-size: 40px;
     align-self: center;
@@ -103,7 +103,7 @@ header {
 
 /* Home */
 #home {
-    display: none; /* block or none */
+    display: block; /* block or none */
     width: 700px;
     height: auto;
     padding: 20px;
@@ -296,7 +296,7 @@ header {
 
 /* Highscores */
 #highscores {
-    display: flex; /* flex or none */
+    display: none; /* flex or none */
     flex-direction: column;
     align-items: center;
 }
