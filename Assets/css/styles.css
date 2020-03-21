@@ -8,8 +8,7 @@
 }
 
 body {
-    background-color: #2B90D9;
-    /* background-color: #D9E1E8; */
+    background-color: #2B90D9; /* #2B90D9 or #D9E1E8 */
 }
 
 
@@ -39,7 +38,7 @@ body {
 }
 
 #highscoresButton {
-    display: none;
+    display: none; /* block or none */
     height: 40px;
     width: 150px;
     align-self: center;
@@ -48,6 +47,16 @@ body {
 
 #submitScoreButton {
     width: 372px;
+}
+
+#clearScoreButton {
+    font-size: 24px;
+    width: 312px;
+    height: 60px;
+}
+
+#backButton {
+    width: 196px;
 }
 
 
@@ -62,7 +71,7 @@ header {
 }
 
 #branding {
-    display: block;
+    display: block; /* block or none */
     color: #D9E1E8;
     font-size: 40px;
     align-self: center;
@@ -94,7 +103,7 @@ header {
 
 /* Home */
 #home {
-    display: none;
+    display: none; /* block or none */
     width: 700px;
     height: auto;
     padding: 20px;
@@ -117,7 +126,7 @@ header {
 
 /* Quiz */
 #quiz {
-    display: none;
+    display: none; /* block or none */
     background-color: #fff;
     width: 760px;
     margin: 0 auto;
@@ -204,26 +213,26 @@ header {
     background-color: rgb(217, 225, 232, 0.6);
     padding: 0 30px;
     height: 80px;
-    display: flex;
+    display: flex; /* flex or none */
     align-items: center;
 }
 
 .quizFeedbackIcon {
     font-size: 22px;
-    color: #D86262;
+    color: #D86262; /* #D86262 or #62D872 */
     margin-right: 20px;
 }
 
 .quizFeedbackText {
     font-size: 22px;
     font-style: italic;
-    color: #D86262;
+    color: #D86262; /* #D86262 or #62D872 */
 }
 
 
 /* Done */
 #done {
-    display: flex;
+    display: none; /* flex or none */
     flex-direction: column;
     align-items: center;
     width: auto;
@@ -287,9 +296,80 @@ header {
 
 /* Highscores */
 #highscores {
-    display: none;
+    display: flex; /* flex or none */
+    flex-direction: column;
+    align-items: center;
 }
 
+#highscoresWrapper {
+    width: 600px;
+    border: 1px solid #D9E1E8;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.highscoresLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgb(217, 225, 232, 0.6);
+    margin-bottom: 12px;
+    padding: 0 18px 0 80px;
+}
+
+#scoreList {
+    display: flex;
+    flex-direction: column;
+}
+
+#scoreList li {
+    list-style-type: none;
+}
+
+.scoreListItem {
+    display: flex;
+    align-items: center;
+    background-color: rgb(217, 225, 232, 0.2);
+    height: 60px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    border-radius: 4px;
+}
+
+.placeNumber {
+    background-color: #D9E1E8;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #2B90D9;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.userName {
+    font-size: 22px;
+    color: #D9E1E8;
+    width: 80%;
+}
+
+.userScore {
+    font-size: 28px;
+    font-weight: bold;
+    color: #D9E1E8;
+    letter-spacing: 2px;
+    margin-right: 20px;
+}
+
+#highscoresButtons {
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+}
 
 
 
@@ -318,6 +398,21 @@ header {
     .quizFeedback {
         padding: 0 20px;
     }
+
+    /* Highscores */
+    #highscoresButtons {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    #clearScoreButton {
+        margin-bottom: 20px;
+    }
+
+    #backButton {
+        width: 312px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and down) */
@@ -341,6 +436,7 @@ header {
         margin-right: 0;
     }
 
+    /* Done */
     #scoreSubmitWrapper {
         flex-direction: column;
         align-items: center;
@@ -353,6 +449,11 @@ header {
 
     #userName {
         margin-bottom: 20px;
+    }
+
+    /* Highscores */
+    #highscoresWrapper {
+        width: 90%;
     }
 }
 
