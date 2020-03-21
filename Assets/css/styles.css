@@ -75,6 +75,7 @@ header {
     color: #D9E1E8;
     font-size: 40px;
     align-self: center;
+    cursor: pointer;
 }
 
 #timer {
