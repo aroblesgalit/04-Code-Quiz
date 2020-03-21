@@ -1,14 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>Code Quiz</title>
 </head>
+
 <body>
 
+    <!-- Container -->
+    <div id="container">
+
+        <!-- Header -->
+        <header>
+            <!-- Branding -->
+            <div id="branding">
+                <span>Color Quiz</span>
+            </div>
+
+            <!-- Highscore link -->
+            <button id="highscoresButton" class="secondaryButtons">HIGHSCORES</button>
+
+            <!-- Timer -->
+            <div id="timer">
+                <div id="time">75</div>
+                <span id="timerLabel">TIME</span>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main>
+            <!-- Home contents -->
+            <div id="home">
+                <h1 class="heading">Code Quiz</h1>
+                <p class="description">
+                    Try to answer the following code-related questions within the time limit. Keep in
+                    mind that incorrect answers will penalize your score/time by ten seconds!
+                </p>
+                <button id="startButton" class="primaryButtons">START</button>
+            </div>
+
+            <!-- Quiz contents -->
+            <div id="quiz">
+                <div class="questionWrapper">
+                    <div class="quizNumWrapper">
+                        <span class="quizNum">1</span>
+                        <span class="quizNumTotal">of 10</span>
+                    </div>
+                    <div class="quizQuestion">Commonly used data types DO NOT include:</div>
+                </div>
+                <ul class="quizAnswerChoices">
+                    <li id="0" class="quizAnswerChoice">
+                        <span class="quizAnswerLetter">A</span>
+                        <span class="quizAnswerText">strings</span>
+                    </li>
+                    <li id="1" class="quizAnswerChoice">
+                        <span class="quizAnswerLetter">B</span>
+                        <span class="quizAnswerText">booleans</span>
+                    </li>
+                    <li id="2" class="quizAnswerChoice">
+                        <span class="quizAnswerLetter">C</span>
+                        <span class="quizAnswerText">alerts</span>
+                    </li>
+                    <li id="3" class="quizAnswerChoice">
+                        <span class="quizAnswerLetter">D</span>
+                        <span class="quizAnswerText">numbers</span>
+                    </li>
+                </ul>
+                <div class="quizFeedback">
+                    <i class="">icon goes here</i>
+                    <span class="quizFeedbackText">Wrong!</span>
+                </div>
+            </div>
+
+            <!-- Done contents -->
+            <div id="done">
+                <h1 class="heading">All done!</h1>
+                <div id="scoreSubmitWrapper">
+                    <div id="scoreWrapper">
+                        <span id="scoreLabel">Your Score:</span>
+                        <div id="score">95</div>
+                    </div>
+                    <form action="" id="scoreSubmitForm">
+                        <input type="text" id="userName" placeholder="Your name">
+                        <button id="submitScoreButton" class="primaryButtons">SUBMIT SCORE</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Highscores -->
+            <div id="highscores">
+                <h1 class="heading">Highscores</h1>
+                <div id="highscoresWrapper">
+                    <div class="highscoresLabels">
+                        <span id="nameLabel">Name</span>
+                        <span id="scoreLabel">Score</span>
+                    </div>
+                    <ul id="scoreList">
+                        <li class="scoreListItem">
+                            <div class="placeNumber">1</div>
+                            <div class="userName">John Doe</div>
+                            <div class="userScore">95</div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="highscoresButtons">
+                    <button id="clearScoreButton" class="secondaryButtons">CLEAR HIGHSCORES</button>
+                    <button id="backButton" class="primaryButtons">GO BACK</button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
     <script src="./script.js"></script>
-    
+
 </body>
+
 </html>
