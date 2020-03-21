@@ -8,24 +8,24 @@
 }
 
 body {
-    background-color: #fff;
-}
-
-
-/* Header */
-header {
     background-color: #2B90D9;
-    height: 82px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
 }
 
-#branding {
-    display: block;
-    color: #D9E1E8;
-    font-size: 40px;
-    align-self: center;
+
+/* Buttons */
+.primaryButtons {
+    background-color: #D9E1E8;
+    color: #2B90D9;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    border: none;
+    font-size: 24px;
+    height: 60px;
+}
+
+#startButton {
+    width: 200px;
 }
 
 .secondaryButtons {
@@ -38,11 +38,29 @@ header {
 }
 
 #highscoresButton {
-    display: none;
+    display: block;
     height: 40px;
     width: 150px;
     align-self: center;
     font-size: 14px;
+}
+
+
+/* Header */
+header {
+    background-color: #2B90D9;
+    height: 82px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-bottom: 40px;
+}
+
+#branding {
+    display: none;
+    color: #D9E1E8;
+    font-size: 40px;
+    align-self: center;
 }
 
 #timer {
@@ -70,7 +88,24 @@ header {
 }
 
 /* Home */
+#home {
+    width: 700px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    color: #D9E1E8;
+    margin: 0 auto;
+}
 
+.heading {
+    font-size: 72px;
+    margin-bottom: 40px;
+}
+
+.description {
+    font-size: 22px;
+    margin-bottom: 40px;
+}
 
 
 /* Quiz */
@@ -88,4 +123,34 @@ header {
 /* Highscores */
 #highscores {
     display: none;
+}
+
+
+
+
+
+/****** Media Querries ******/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #home {
+        padding: 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    #home {
+        width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px) {
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+    
 }
