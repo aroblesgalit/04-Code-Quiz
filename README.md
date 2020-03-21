@@ -30,13 +30,7 @@ The following animation demonstrates the application functionality:
 
 ![code quiz](./Assets/04-web-apis-homework-demo.gif)
 
-### Review
+## Deployed Application
+[Code Quiz](https://aroblesgalit.github.io/04-Code-Quiz/)
 
-You are required to submit the following for review:
 
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
