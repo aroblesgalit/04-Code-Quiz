@@ -68,3 +68,24 @@ header {
     font-size: 14px;
     opacity: .6;
 }
+
+/* Home */
+
+
+
+/* Quiz */
+#quiz {
+    display: none;
+}
+
+
+/* Done */
+#done {
+    display: none;
+}
+
+
+/* Highscores */
+#highscores {
+    display: none;
+}
