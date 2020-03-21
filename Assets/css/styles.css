@@ -8,8 +8,8 @@
 }
 
 body {
-    /* background-color: #2B90D9; */
-    background-color: #D9E1E8;
+    background-color: #2B90D9;
+    /* background-color: #D9E1E8; */
 }
 
 
@@ -44,6 +44,10 @@ body {
     width: 150px;
     align-self: center;
     font-size: 14px;
+}
+
+#submitScoreButton {
+    width: 372px;
 }
 
 
@@ -102,6 +106,7 @@ header {
 .heading {
     font-size: 72px;
     margin-bottom: 40px;
+    color: #D9E1E8;
 }
 
 .description {
@@ -112,7 +117,7 @@ header {
 
 /* Quiz */
 #quiz {
-    display: block;
+    display: none;
     background-color: #fff;
     width: 760px;
     margin: 0 auto;
@@ -218,7 +223,65 @@ header {
 
 /* Done */
 #done {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+#scoreSubmitWrapper {
+    display: flex;
+}
+
+#scoreWrapper {
+    width: 170px;
+    height: 154px;
+    border: 1px solid #D9E1E8;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #D9E1E8;
+    margin-right: 40px;
+}
+
+#scoreLabel {
+    font-size: 22px;
+}
+
+#score {
+    font-size: 100px;
+    line-height: .85;
+}
+
+#userName {
+    height: 60px;
+    padding-left: 20px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: none;
+    border-bottom: 1px solid #D9E1E8;
+    background-color: rgb(217, 225, 232, 0.3);
+    font-size: 22px;
+    color: #D9E1E8;
+}
+
+#userName::placeholder {
+    color: #D9E1E8;
+    opacity: 0.6;
+}
+
+#userName:focus, #userName:hover {
+    background-color: rgb(217, 225, 232, 0.1);
+    border-bottom: 2px solid #D9E1E8;
+}
+
+#scoreSubmitForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 
@@ -276,6 +339,20 @@ header {
     .quizAnswerChoice {
         width: 100%;
         margin-right: 0;
+    }
+
+    #scoreSubmitWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scoreWrapper {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    #userName {
+        margin-bottom: 20px;
     }
 }
 
