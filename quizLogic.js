@@ -60,7 +60,7 @@ var letterChoices = ["A", "B", "C", "D"];
 var quizNum = 1;
 var quizNumTotal = questions.length;
 var quizId = 0;
-var userScore = parseInt(time.textContent);
+var userScore = document.getElementById("score");
 
 // On click event listeners
 startButton.addEventListener("click", createQuizUI);
@@ -162,8 +162,6 @@ function createQuizUI() {
                 console.log(timeLeft);
                 // Update displayed time
                 time.textContent = timeLeft;
-                
-                // Start time again
             }
 
             // Increment quizNum and quizId by 1
@@ -184,5 +182,5 @@ function createQuizUI() {
 
 // Function to display score in done screen
 function displayScore() {
-    document.getElementById("score").textContent = userScore;
+    userScore.textContent = timeLeft;
 }
