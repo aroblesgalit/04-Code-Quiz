@@ -33,4 +33,44 @@ var questions = [
 ];
 
 
-// Target div elements
+// On click event listeners
+startButton.addEventListener("click", createQuizUI);
+
+// Declare variables
+var quizNum = 1;
+var quizNumTotal = questions.length;
+
+// Create quiz ui divs dynamically and append to body, then insert question
+function createQuizUI() {
+    // questionWrapper div and give it class
+    var questionWrapperDiv = document.createElement("div");
+    questionWrapperDiv.setAttribute("class", "questionWrapper");
+    // quizNumWrapper div and give it class
+    var quizNumWrapperDiv = document.createElement("div");
+    quizNumWrapperDiv.setAttribute("class", "quizNumWrapper");
+    // quizNum span and give it class
+    var quizNumSpan = document.createElement("span");
+    quizNumSpan.setAttribute("class", "quizNum");
+    // quizNumTotal span and give it class
+    var quizNumTotalSpan = document.createElement("span");
+    quizNumTotalSpan.setAttribute("class", "quizNumTotal");
+    // quizQuestion div and give it class
+    var quizQuestionDiv = document.createElement("div");
+    quizQuestionDiv.setAttribute("class", "quizQuestion");
+    // Append divs to each other
+    quizNumWrapperDiv.appendChild(quizNumSpan);
+    quizNumWrapperDiv.appendChild(quizNumTotalSpan);
+    questionWrapperDiv.appendChild(quizNumWrapperDiv);
+    questionWrapperDiv.appendChild(quizQuestionDiv);
+
+    // Append main divs to body
+    quizUI.appendChild(questionWrapperDiv);
+
+    // Grab questions and append them to created quiz ui
+    // Grab quizNum
+    quizNumSpan.innerHTML = quizNum;
+    // Grab quizNumTotal
+    quizNumTotalSpan.innerHTML = "of " + quizNumTotal;
+    // Grab quizQuestion
+    quizQuestionDiv.innerHTML = questions[quizNum - 1]["question"];
+}
