@@ -158,15 +158,21 @@ function createQuizUI() {
 
             timeLeft = parseInt(time.textContent);
             if (userChoice === questions[quizId]["answer"]) {
-                console.log("Correct!");
-                console.log(timeLeft);
+                time.textContent = timeLeft;
             } else {
                 // Subtract from time
-                timeLeft -= 10;
-                console.log("Wrong!");
-                console.log(timeLeft);
-                // Update displayed time
-                time.textContent = timeLeft;
+                if (timeLeft > 10) {
+                    timeLeft -= 10;
+                    // Update displayed time
+                    time.textContent = timeLeft;
+                } else if (timeLeft <= 10) {
+                    timeLeft = 0;
+                    // Display Done screen
+                    viewDoneScreen();
+                    time.textContent = "00";
+                    // Stop timer
+                    clearInterval(interval);
+                }              
             }
 
             // Increment quizNum and quizId by 1
