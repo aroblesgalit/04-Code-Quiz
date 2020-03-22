@@ -1,6 +1,7 @@
 // Target elements
 var userNameInput = document.getElementById("userName");
 var scoreListUl = document.getElementById("scoreList");
+var clearScoreButton = document.getElementById("clearScoreButton");
 
 // Create variables
 var position = 1; // Hard coded for now, but it should equal user's position based on score
@@ -8,7 +9,7 @@ var highscoresArray = [];
 
 // Event listeners
 submitScoreButton.addEventListener("click", submitScore);
-
+clearScoreButton.addEventListener("click", clearScore);
 
 
 // Function that takes in the score and adds it to the highscores list
@@ -42,4 +43,12 @@ function createScoreListItem() {
     scoreListItemLi.appendChild(userNameDiv);
     scoreListItemLi.appendChild(userScoreDiv);
     scoreListUl.appendChild(scoreListItemLi);
+}
+
+
+// Function to clear score
+function clearScore() {
+    alert("Clear Score!!!");
+    var scoreListItemLi = document.querySelector(".scoreListItem");
+    scoreListItemLi.parentNode.removeChild(scoreListItemLi);
 }
