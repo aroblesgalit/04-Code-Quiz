@@ -83,6 +83,8 @@ function viewHighscores() {
     viewBranding();
     // Hide Home contents
     hideHomeScreen();
+    // Hide Done contents
+    hideDoneScreen();
 }
 
 function init() {
