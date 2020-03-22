@@ -198,3 +198,14 @@ function displayScore() {
 }
 
 
+// Function to display feedback
+function displayFeedback() {
+    // Target the feedback div
+    var quizFeedbackDiv = document.querySelector(".quizFeedback");
+    // Add the "show" class to div
+    quizFeedbackDiv.classList.add("show");
+    // After 3 seconds, remove the show class from the div
+    setTimeout(function() {
+        quizFeedbackDiv.classList.remove("show");
+    }, 3000);
+}
