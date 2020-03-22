@@ -228,11 +228,44 @@ header {
 }
 
 .quizFeedback {
+    min-width: 250px;
     background-color: rgb(217, 225, 232, 0.6);
     padding: 0 30px;
     height: 80px;
     display: none; /* flex or none */
     align-items: center;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -125px;
+    border-radius: 4px;
+}
+
+.quizFeedback.show {
+    display: flex;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the quizFeedback snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+from {bottom: 0; opacity: 0;}
+to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+from {bottom: 30px; opacity: 1;}
+to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+from {bottom: 30px; opacity: 1;}
+to {bottom: 0; opacity: 0;}
 }
 
 .quizFeedbackIcon {

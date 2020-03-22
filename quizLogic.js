@@ -196,3 +196,5 @@ function displayScore() {
         userScore.textContent = timeLeft;
     }
 }
+
+
