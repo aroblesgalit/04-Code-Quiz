@@ -53,6 +53,7 @@ function createQuizUI() {
     if (quizNum > quizNumTotal) {
         // Show done screen
         alert("You're done!")
+        viewDoneScreen();
     }
 
 

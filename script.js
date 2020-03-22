@@ -7,6 +7,7 @@ var quizUI = document.getElementById("quiz");
 var startButton = document.getElementById("startButton");
 var backButton = document.getElementById("backButton");
 var time = document.getElementById("time");
+var doneScreen = document.getElementById("done");
 
 
 // Logic for when things are clicked
@@ -95,6 +96,13 @@ function viewQuizScreen() {
     viewBranding();
     // Hide home screen content
     hideHomeScreen();
+}
+
+function viewDoneScreen() {
+    // Display Done contents
+    doneScreen.style.display = "flex";
+    // Change body background color
+    document.body.style.backgroundColor = "#2B90D9";
 }
 
 
