@@ -74,6 +74,7 @@ header {
     display: none; /* block or none */
     color: #D9E1E8;
     font-size: 40px;
+    font-weight: bold;
     align-self: center;
     cursor: pointer;
 }
@@ -328,7 +329,7 @@ header {
     font-size: 14px;
     color: rgb(217, 225, 232, 0.6);
     margin-bottom: 12px;
-    padding: 0 18px 0 80px;
+    padding: 0 18px;
 }
 
 #scoreList {
@@ -463,6 +464,10 @@ header {
         width: 100%;
     }
 
+    #branding {
+        font-size: 32px;
+    }
+
     /* Quiz */
     #quiz {
         width: 90%;
@@ -500,6 +505,15 @@ header {
 
     #backButton {
         margin-bottom: 60px;
+    }
+
+    .scoreListItem {
+        padding-left: 12px;
+    }
+    
+    .placeNumber {
+        min-width: 36px;
+        margin-right: 12px;
     }
 }
 
