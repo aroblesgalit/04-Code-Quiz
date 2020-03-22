@@ -59,6 +59,10 @@ function hideQuizUI() {
     quizUI.style.display = "none";
 }
 
+function hideDoneScreen() {
+    doneScreen.style.display = "none";
+}
+
 
 // Functions for viewing contents
 function viewHighscores() {
@@ -75,6 +79,8 @@ function viewHighscores() {
 function viewHomeScreen() {
     // Display Home contents
     homeScreen.style.display = "block";
+    // Change body background color
+    document.body.style.backgroundColor = "#2B90D9";
     // Hide Highscores contents
     hideHighscores();
     // Hide branding
@@ -83,6 +89,8 @@ function viewHomeScreen() {
     viewHighscoresButton();
     // Hide Quiz UI contents
     hideQuizUI();
+    // Hide Done contents
+    hideDoneScreen();
 }
 
 function viewQuizScreen() {

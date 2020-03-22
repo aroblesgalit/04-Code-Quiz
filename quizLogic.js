@@ -54,6 +54,7 @@ function createQuizUI() {
         // Show done screen
         alert("You're done!")
         viewDoneScreen();
+        // Stop timer
     }
 
 
