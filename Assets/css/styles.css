@@ -229,7 +229,7 @@ header {
 
 .quizFeedback {
     min-width: 250px;
-    background-color: rgb(217, 225, 232, 0.6);
+    background-color: #282C37;
     padding: 0 30px;
     height: 80px;
     display: none; /* flex or none */

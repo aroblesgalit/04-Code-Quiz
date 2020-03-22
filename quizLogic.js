@@ -159,14 +159,18 @@ function createQuizUI() {
             timeLeft = parseInt(time.textContent);
             if (userChoice === questions[quizId]["answer"]) {
                 time.textContent = timeLeft;
+                // displayFeedback();
             } else {
                 // Subtract from time
                 if (timeLeft > 10) {
                     timeLeft -= 10;
                     // Update displayed time
                     time.textContent = timeLeft;
+                    // Display feedback
+                    displayFeedback();
                 } else if (timeLeft <= 10) {
                     timeLeft = 0;
+                    displayFeedback();
                     // Display Done screen
                     viewDoneScreen();
                     time.textContent = "00";
