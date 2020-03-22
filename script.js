@@ -100,6 +100,9 @@ function viewHomeScreen() {
     hideQuizUI();
     // Hide Done contents
     hideDoneScreen();
+    // Stop timer and set it back to default
+    clearInterval(interval);
+    time.textContent = 75;
 }
 
 function viewQuizScreen() {
