@@ -200,6 +200,10 @@ header {
     background-color: #D9E1E8;
 }
 
+.quizAnswerChoices span {
+    pointer-events: none;
+}
+
 .quizAnswerLetter {
     height: 32px;
     width: 32px;
