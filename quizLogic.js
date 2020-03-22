@@ -60,7 +60,7 @@ var letterChoices = ["A", "B", "C", "D"];
 var quizNum = 1;
 var quizNumTotal = questions.length;
 var quizId = 0;
-var userScore = 0;
+var userScore = parseInt(time.textContent);
 
 // On click event listeners
 startButton.addEventListener("click", createQuizUI);
@@ -151,14 +151,19 @@ function createQuizUI() {
             var userChoicePlusLetter = event.target.textContent;
             var userChoice = userChoicePlusLetter.substring(1, userChoicePlusLetter.length + 1);
 
+            timeLeft = parseInt(time.textContent);
             if (userChoice === questions[quizId]["answer"]) {
                 console.log("Correct!");
-                userScore += 10;
-                console.log(userScore);
+                console.log(timeLeft);
             } else {
                 // Subtract from time
+                timeLeft -= 10;
                 console.log("Wrong!");
-                console.log(userScore);
+                console.log(timeLeft);
+                // Update displayed time
+                time.textContent = timeLeft;
+                
+                // Start time again
             }
 
             // Increment quizNum and quizId by 1

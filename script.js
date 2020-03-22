@@ -29,8 +29,9 @@ function startQuiz() {
 
 // Timer logic
 var interval;
+var timeLeft;
 function startTimer() {
-    var timeLeft = parseInt(time.textContent);
+    timeLeft = parseInt(time.textContent);
     interval = setInterval(function() {
        
         timeLeft--;
