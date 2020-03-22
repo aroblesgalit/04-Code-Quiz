@@ -35,19 +35,16 @@ var questions = [
 // quizAnswerLetter array
 var letterChoices = ["A", "B", "C", "D"];
 
-// Target elements
-var quizAnswerChoices = document.querySelector('quizAnswerChoices');
-
-// On click event listeners
-startButton.addEventListener("click", createQuizUI);
-
-
 
 // Declare variables
 var quizNum = 1;
 var quizNumTotal = questions.length;
 var currentQuizId = quizNum - 1;
 var userScore = 0;
+
+// On click event listeners
+startButton.addEventListener("click", createQuizUI);
+
 
 // Create quiz ui divs dynamically and append to body, then insert question
 function createQuizUI() {
@@ -89,7 +86,7 @@ function createQuizUI() {
 
     // Loop through array choices to create quizAnswerChoice li's
     var choicesArr = questions[currentQuizId]["choices"];
-    console.log(choicesArr);
+
     for (var i = 0; i < choicesArr.length; i++) {
         // quizAnswerChoice li and give it class, and set id
         var quizAnswerChoiceLi = document.createElement("li");
@@ -112,4 +109,22 @@ function createQuizUI() {
         quizAnswerLetterSpan.innerHTML = letterChoices[i];
         quizAnswerTextSpan.textContent = choicesArr[i];
     }
+
+    quizNum++;
+    nextQuestion();
+}
+
+function nextQuestion() {
+
+    // Target elements
+    var quizAnswerChoices = document.querySelector('quizAnswerChoices');
+    console.log("Quiz answer choices: " + quizAnswerChoices);
+
+    quizAnswerChoices.addEventListener("click", function(event) {
+        alert(event);
+        // if (event.target.matches("li")) {
+        //     createQuizUI();
+        // }
+    });
+
 }
