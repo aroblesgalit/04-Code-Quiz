@@ -466,6 +466,7 @@ header {
     /* Quiz */
     #quiz {
         width: 90%;
+        margin-bottom: 60px;
     }
 
     .quizNumWrapper {
@@ -495,6 +496,10 @@ header {
     /* Highscores */
     #highscoresWrapper {
         width: 90%;
+    }
+
+    #backButton {
+        margin-bottom: 60px;
     }
 }
 
