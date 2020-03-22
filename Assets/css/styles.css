@@ -395,6 +395,23 @@ header {
         padding: 10px;
     }
 
+    header {
+        padding: 0 20px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    #startButton {
+        width: 80%;
+    }
+
+    .heading {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
     /* Quiz */
     #quiz {
         width: 100%;
