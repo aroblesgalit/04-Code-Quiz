@@ -4,8 +4,8 @@ var scoreListUl = document.getElementById("scoreList");
 var clearScoreButton = document.getElementById("clearScoreButton");
 
 // Create variables
-var position = 1; // Hard coded for now, but it should equal user's position based on score
-var highscoresArray = [];
+var position = 1; // index of user's object + 1 Hard coded for now, but it should equal user's position based on score
+var highscoresArray = []; // Array of objects [{name: "John Doe", score: 65}, {name: "Alice Wonderland", score: 55}] -- then use a method to order them
 
 // Event listeners
 submitScoreButton.addEventListener("click", submitScore);
