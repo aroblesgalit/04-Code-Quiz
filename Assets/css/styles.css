@@ -474,13 +474,23 @@ header {
         margin-bottom: 60px;
     }
 
+    .questionWrapper {
+        display: flex;
+        padding-bottom: 20px;
+    }
+
     .quizNumWrapper {
         margin-right: 20px;
+    }
+
+    .quizQuestion {
+        font-size: 18px;
     }
 
     .quizAnswerChoice {
         width: 100%;
         margin-right: 0;
+        margin-bottom: 12px;
     }
 
     /* Done */

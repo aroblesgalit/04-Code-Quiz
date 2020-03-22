@@ -84,7 +84,7 @@ function createQuizUI() {
 
 
     // questionWrapper div and give it class -- only when question exist
-    if (quizNum < quizNumTotal + 1) {
+    if (quizNum <= quizNumTotal) {
         var questionWrapperDiv = document.createElement("div");
         questionWrapperDiv.setAttribute("class", "questionWrapper");
     }
