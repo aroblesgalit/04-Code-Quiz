@@ -61,9 +61,14 @@ var quizNum = 1;
 var quizNumTotal = questions.length;
 var quizId = 0;
 var userScore = document.getElementById("score");
+var submitScoreButton = document.getElementById("submitScoreButton");
 
 // On click event listeners
 startButton.addEventListener("click", createQuizUI);
+// When submit button is clicked
+submitScoreButton.addEventListener("click", function(event) {
+    event.preventDefault();
+});
 
 
 // Create quiz ui divs dynamically and append to body, then insert question
@@ -184,3 +189,9 @@ function createQuizUI() {
 function displayScore() {
     userScore.textContent = timeLeft;
 }
+
+
+// Function to submit score
+// function submitScore(event) {
+//     event.preventDefaut();
+// }
