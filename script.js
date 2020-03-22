@@ -19,13 +19,7 @@ backButton.addEventListener("click", viewHomeScreen);
 // Start quiz function
 function startQuiz() {
     // View Quiz UI contents
-    quizUI.style.display = "block";
-    // Hide highscores button
-    hideHighscoresButton();
-    // View branding 
-    viewBranding();
-    // Hide home screen content
-    hideHomeScreen();
+    viewQuizScreen();
     // Start timer
     startTimer();
 }
@@ -88,6 +82,23 @@ function viewHomeScreen() {
     viewHighscoresButton();
     // Hide Quiz UI contents
     hideQuizUI();
+}
+
+function viewQuizScreen() {
+    // Display Quiz contents
+    quizUI.style.display = "block";
+    // Hide highscores button
+    hideHighscoresButton();
+    // View branding 
+    viewBranding();
+    // Hide home screen content
+    hideHomeScreen();
+}
+
+
+// Grab quiz contents funciton
+function grabQuizContents() {
+
 }
 
 
