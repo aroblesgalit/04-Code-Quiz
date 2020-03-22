@@ -32,13 +32,22 @@ var questions = [
     }
 ];
 
+// quizAnswerLetter array
+var letterChoices = ["A", "B", "C", "D"];
+
+// Target elements
+var quizAnswerChoices = document.querySelector('quizAnswerChoices');
 
 // On click event listeners
 startButton.addEventListener("click", createQuizUI);
 
+
+
 // Declare variables
 var quizNum = 1;
 var quizNumTotal = questions.length;
+var currentQuizId = quizNum - 1;
+var userScore = 0;
 
 // Create quiz ui divs dynamically and append to body, then insert question
 function createQuizUI() {
@@ -57,6 +66,10 @@ function createQuizUI() {
     // quizQuestion div and give it class
     var quizQuestionDiv = document.createElement("div");
     quizQuestionDiv.setAttribute("class", "quizQuestion");
+    // quizAnswerChoices ul and give it class
+    var quizAnswerChoicesUl = document.createElement("ul");
+    quizAnswerChoicesUl.setAttribute("class", "quizAnswerChoices");
+
     // Append divs to each other
     quizNumWrapperDiv.appendChild(quizNumSpan);
     quizNumWrapperDiv.appendChild(quizNumTotalSpan);
@@ -72,5 +85,31 @@ function createQuizUI() {
     // Grab quizNumTotal
     quizNumTotalSpan.innerHTML = "of " + quizNumTotal;
     // Grab quizQuestion
-    quizQuestionDiv.innerHTML = questions[quizNum - 1]["question"];
+    quizQuestionDiv.innerHTML = questions[currentQuizId]["question"];
+
+    // Loop through array choices to create quizAnswerChoice li's
+    var choicesArr = questions[currentQuizId]["choices"];
+    console.log(choicesArr);
+    for (var i = 0; i < choicesArr.length; i++) {
+        // quizAnswerChoice li and give it class, and set id
+        var quizAnswerChoiceLi = document.createElement("li");
+        quizAnswerChoiceLi.setAttribute("class", "quizAnswerChoice");
+        quizAnswerChoiceLi.setAttribute("id", i);
+        // quizAnswerLetter span and give it class
+        var quizAnswerLetterSpan = document.createElement("span");
+        quizAnswerLetterSpan.setAttribute("class", "quizAnswerLetter");
+        // quizAnswerText span and give it class
+        var quizAnswerTextSpan = document.createElement("span");
+        quizAnswerTextSpan.setAttribute("class", "quizAnswerText");
+
+        // Append divs to each other
+        quizAnswerChoiceLi.appendChild(quizAnswerLetterSpan);
+        quizAnswerChoiceLi.appendChild(quizAnswerTextSpan);
+        quizAnswerChoicesUl.appendChild(quizAnswerChoiceLi);
+        // Append main div to body
+        quizUI.appendChild(quizAnswerChoicesUl);
+        // Grab choices and append them to created spans
+        quizAnswerLetterSpan.innerHTML = letterChoices[i];
+        quizAnswerTextSpan.textContent = choicesArr[i];
+    }
 }
