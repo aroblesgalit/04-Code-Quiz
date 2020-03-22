@@ -115,6 +115,19 @@ function createQuizUI() {
     quizAnswerChoicesUl.addEventListener("click", function (event) {
         
         if (event.target.matches("li")) {
+            // If correct answer then add to userScore
+            var userChoicePlusLetter = event.target.textContent;
+            var userChoice = userChoicePlusLetter.substring(1, userChoicePlusLetter.length + 1);
+
+            if (userChoice === questions[quizId]["answer"]) {
+                console.log("Correct!");
+                userScore++;
+                console.log(userScore);
+            } else {
+                console.log("Wrong!");
+                console.log(userScore);
+            }
+
             // Increment quizNum and quizId by 1
             quizNum++;
             quizId++;
