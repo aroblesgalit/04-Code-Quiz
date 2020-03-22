@@ -146,7 +146,7 @@ function createQuizUI() {
     // Logic for when an answer choice is clicked
     quizAnswerChoicesUl.addEventListener("click", function (event) {
 
-        if (event.target.matches("li")) {
+        if (event.target.matches("li") || event.target.matches("span")) {
             // If correct answer then add to userScore
             var userChoicePlusLetter = event.target.textContent;
             var userChoice = userChoicePlusLetter.substring(1, userChoicePlusLetter.length + 1);
