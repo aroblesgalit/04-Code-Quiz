@@ -39,7 +39,7 @@ var letterChoices = ["A", "B", "C", "D"];
 // Declare variables
 var quizNum = 1;
 var quizNumTotal = questions.length;
-var currentQuizId = quizNum - 1;
+var quizId = 0;
 var userScore = 0;
 
 // On click event listeners
@@ -82,10 +82,10 @@ function createQuizUI() {
     // Grab quizNumTotal
     quizNumTotalSpan.innerHTML = "of " + quizNumTotal;
     // Grab quizQuestion
-    quizQuestionDiv.innerHTML = questions[currentQuizId]["question"];
+    quizQuestionDiv.innerHTML = questions[quizId]["question"];
 
     // Loop through array choices to create quizAnswerChoice li's
-    var choicesArr = questions[currentQuizId]["choices"];
+    var choicesArr = questions[quizId]["choices"];
 
     for (var i = 0; i < choicesArr.length; i++) {
         // quizAnswerChoice li and give it class, and set id
@@ -109,19 +109,23 @@ function createQuizUI() {
         quizAnswerLetterSpan.innerHTML = letterChoices[i];
         quizAnswerTextSpan.textContent = choicesArr[i];
     }
+    
 
-    quizNum++;
-    nextQuestion();
-}
+    // Logic for when an answer choice is clicked
+    quizAnswerChoicesUl.addEventListener("click", function (event) {
+        
+        if (event.target.matches("li")) {
+            // Increment quizNum and quizId by 1
+            quizNum++;
+            quizId++;
+            // Remove previous quiz ui
+            questionWrapperDiv.remove();
+            quizAnswerChoicesUl.remove();
+            // Create next quiz ui
+            createQuizUI();
 
-// For when an answer choice is clicked
-function nextQuestion() {
+            // When no more questions, go to done screen
 
-    quizAnswerChoicesUl.addEventListener("click", function(event) {
-        alert(event);
-        // if (event.target.matches("li")) {
-        //     createQuizUI();
-        // }
+        }
     });
-
 }
