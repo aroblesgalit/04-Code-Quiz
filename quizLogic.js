@@ -66,7 +66,7 @@ var submitScoreButton = document.getElementById("submitScoreButton");
 // On click event listeners
 startButton.addEventListener("click", createQuizUI);
 // When submit button is clicked
-submitScoreButton.addEventListener("click", function(event) {
+submitScoreButton.addEventListener("click", function (event) {
     event.preventDefault();
 });
 
@@ -172,7 +172,7 @@ function createQuizUI() {
                     time.textContent = "00";
                     // Stop timer
                     clearInterval(interval);
-                }              
+                }
             }
 
             // Increment quizNum and quizId by 1
@@ -183,9 +183,6 @@ function createQuizUI() {
             quizAnswerChoicesUl.remove();
             // Create next quiz ui
             createQuizUI();
-
-            // When no more questions, go to done screen
-
         }
     });
 }
@@ -198,11 +195,4 @@ function displayScore() {
     } else {
         userScore.textContent = timeLeft;
     }
-
 }
-
-
-// Function to submit score
-// function submitScore(event) {
-//     event.preventDefaut();
-// }

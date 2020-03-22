@@ -12,9 +12,9 @@ var doneScreen = document.getElementById("done");
 
 // Logic for when things are clicked
 highscoresButton.addEventListener("click", viewHighscores);
-branding.addEventListener("click", viewHomeScreen);
+branding.addEventListener("click", init);
 startButton.addEventListener("click", startQuiz);
-backButton.addEventListener("click", viewHomeScreen);
+backButton.addEventListener("click", init);
 
 
 // Start quiz function
@@ -32,15 +32,15 @@ var interval;
 var timeLeft;
 function startTimer() {
     timeLeft = parseInt(time.textContent);
-    interval = setInterval(function() {
-       
+    interval = setInterval(function () {
+
         timeLeft--;
         if (timeLeft >= 10) {
             time.textContent = timeLeft;
         } else {
             time.textContent = "0" + timeLeft;
         }
-        
+
         if (timeLeft === 0) {
             clearInterval(interval)
             // Switch to done screen
@@ -85,7 +85,7 @@ function viewHighscores() {
     hideHomeScreen();
 }
 
-function viewHomeScreen() {
+function init() {
     // Display Home contents
     homeScreen.style.display = "block";
     // Change body background color
@@ -103,6 +103,9 @@ function viewHomeScreen() {
     // Stop timer and set it back to default
     clearInterval(interval);
     time.textContent = 75;
+    // Reset variables
+    quizNum = 1;
+    quizId = 0;
 }
 
 function viewQuizScreen() {
