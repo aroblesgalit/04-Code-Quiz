@@ -48,9 +48,19 @@ startButton.addEventListener("click", createQuizUI);
 
 // Create quiz ui divs dynamically and append to body, then insert question
 function createQuizUI() {
-    // questionWrapper div and give it class
-    var questionWrapperDiv = document.createElement("div");
-    questionWrapperDiv.setAttribute("class", "questionWrapper");
+
+    // Switch to Done screen when no more questions available
+    if (quizNum > quizNumTotal) {
+        // Show done screen
+        alert("You're done!")
+    }
+
+
+    // questionWrapper div and give it class -- only when question exist
+    if (quizNum < quizNumTotal + 1) {
+        var questionWrapperDiv = document.createElement("div");
+        questionWrapperDiv.setAttribute("class", "questionWrapper");
+    }
     // quizNumWrapper div and give it class
     var quizNumWrapperDiv = document.createElement("div");
     quizNumWrapperDiv.setAttribute("class", "quizNumWrapper");
@@ -109,11 +119,11 @@ function createQuizUI() {
         quizAnswerLetterSpan.innerHTML = letterChoices[i];
         quizAnswerTextSpan.textContent = choicesArr[i];
     }
-    
+
 
     // Logic for when an answer choice is clicked
     quizAnswerChoicesUl.addEventListener("click", function (event) {
-        
+
         if (event.target.matches("li")) {
             // If correct answer then add to userScore
             var userChoicePlusLetter = event.target.textContent;
@@ -121,9 +131,10 @@ function createQuizUI() {
 
             if (userChoice === questions[quizId]["answer"]) {
                 console.log("Correct!");
-                userScore++;
+                userScore += 5;
                 console.log(userScore);
             } else {
+                // Subtract from time
                 console.log("Wrong!");
                 console.log(userScore);
             }
