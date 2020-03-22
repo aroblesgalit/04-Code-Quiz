@@ -114,13 +114,10 @@ function createQuizUI() {
     nextQuestion();
 }
 
+// For when an answer choice is clicked
 function nextQuestion() {
 
-    // Target elements
-    var quizAnswerChoices = document.querySelector('quizAnswerChoices');
-    console.log("Quiz answer choices: " + quizAnswerChoices);
-
-    quizAnswerChoices.addEventListener("click", function(event) {
+    quizAnswerChoicesUl.addEventListener("click", function(event) {
         alert(event);
         // if (event.target.matches("li")) {
         //     createQuizUI();

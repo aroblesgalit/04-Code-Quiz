@@ -87,6 +87,8 @@ function viewHomeScreen() {
 function viewQuizScreen() {
     // Display Quiz contents
     quizUI.style.display = "block";
+    // Change body background color
+    document.body.style.backgroundColor = "#D9E1E8";
     // Hide highscores button
     hideHighscoresButton();
     // View branding 
