@@ -26,10 +26,12 @@ function startQuiz() {
 }
 
 
+
 // Timer logic
+var interval;
 function startTimer() {
     var timeLeft = parseInt(time.textContent);
-    var interval = setInterval(function() {
+    interval = setInterval(function() {
        
         timeLeft--;
         if (timeLeft >= 10) {
@@ -43,6 +45,10 @@ function startTimer() {
         }
 
     }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(interval);
 }
 
 
@@ -111,6 +117,8 @@ function viewDoneScreen() {
     doneScreen.style.display = "flex";
     // Change body background color
     document.body.style.backgroundColor = "#2B90D9";
+    // Display user's score
+    displayScore();
 }
 
 

@@ -55,6 +55,7 @@ function createQuizUI() {
         alert("You're done!")
         viewDoneScreen();
         // Stop timer
+        stopTimer();
     }
 
 
@@ -154,4 +155,10 @@ function createQuizUI() {
 
         }
     });
+}
+
+
+// Function to display score in done screen
+function displayScore() {
+    document.getElementById("score").textContent = userScore;
 }
