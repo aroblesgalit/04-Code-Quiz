@@ -48,7 +48,6 @@ function createScoreListItem() {
 
 // Function to clear score
 function clearScore() {
-    alert("Clear Score!!!");
     var scoreListItemLi = document.querySelector(".scoreListItem");
     scoreListItemLi.parentNode.removeChild(scoreListItemLi);
 }
