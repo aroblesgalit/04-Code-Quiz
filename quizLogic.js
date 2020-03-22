@@ -72,7 +72,6 @@ function createQuizUI() {
     // Switch to Done screen when no more questions available
     if (quizNum > quizNumTotal) {
         // Show done screen
-        alert("You're done!")
         viewDoneScreen();
         // Stop timer
         stopTimer();

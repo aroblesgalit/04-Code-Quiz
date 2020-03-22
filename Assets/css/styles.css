@@ -429,6 +429,17 @@ header {
         padding: 0 20px;
     }
 
+    /* Done */
+    #scoreSubmitWrapper {
+        width: 90%;
+    }
+    #scoreSubmitForm {
+        width: 90%;
+    }
+    #submitScoreButton {
+        width: 100%;
+    }
+
     /* Highscores */
     #highscoresButtons {
         flex-direction: column;
