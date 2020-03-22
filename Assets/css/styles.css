@@ -214,7 +214,7 @@ header {
     background-color: rgb(217, 225, 232, 0.6);
     padding: 0 30px;
     height: 80px;
-    display: flex; /* flex or none */
+    display: none; /* flex or none */
     align-items: center;
 }
 

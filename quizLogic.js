@@ -30,4 +30,7 @@ var questions = [
         choices: ["msgBox('Hello World');", "msg('Hello World');", "alertBox('Hello World');", "alert('Hello World');"],
         answer: "alert('Hello World');"
     }
-]
+];
+
+
+// Target div elements

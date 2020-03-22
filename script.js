@@ -96,11 +96,6 @@ function viewQuizScreen() {
 }
 
 
-// Grab quiz contents funciton
-function grabQuizContents() {
-
-}
-
 
 // Functions for hiding buttons
 function hideHighscoresButton() {
