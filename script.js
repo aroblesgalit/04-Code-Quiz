@@ -43,6 +43,8 @@ function startTimer() {
         
         if (timeLeft === 0) {
             clearInterval(interval)
+            // Switch to done screen
+            viewDoneScreen();
         }
 
     }, 1000);
@@ -118,6 +120,8 @@ function viewDoneScreen() {
     doneScreen.style.display = "flex";
     // Change body background color
     document.body.style.backgroundColor = "#2B90D9";
+    // Hide Quiz contents
+    hideQuizUI();
     // Display user's score
     displayScore();
 }

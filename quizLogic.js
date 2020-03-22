@@ -187,7 +187,12 @@ function createQuizUI() {
 
 // Function to display score in done screen
 function displayScore() {
-    userScore.textContent = timeLeft;
+    if (timeLeft < 10) {
+        userScore.textContent = "0" + timeLeft;
+    } else {
+        userScore.textContent = timeLeft;
+    }
+
 }
 
 
