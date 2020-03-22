@@ -6,14 +6,14 @@ var questions = [
         answer: "<script>"
     },
     {
-        question: "What is the correct JavaScript syntax to change the content of the following HTML element? <p id='demo'>This is a demonstration.</p>",
-        choices: ["document.getElementByName('p').innerHTML = 'Hello World!';", "document.getElement('p').innerHTML = 'Hello World';", "document.getElementByID('demo').innerHTML = 'Hello World!';", "#demo.innerHTML = 'Hello World!';"],
-        answer: "document.getElementByID('demo').innerHTML = 'Hello World!';"
+        question: "What is the correct format for a comment in JavaScript",
+        choices: ["{#...#}", "<!--...-->", "//...", "\\..."],
+        answer: "<!--...-->"
     },
     {
-        question: "Where is the correct place to insert a JavaScript",
-        choices: ["The <body> section", "Both the <head> section and the <body> section are correct", "The <head> section"],
-        answer: "Both the <head> section and the <body> section are correct"
+        question: "JavaScript is the same as Java.",
+        choices: ["True", "False"],
+        answer: "False"
     },
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
@@ -22,13 +22,33 @@ var questions = [
     },
     {
         question: "The external JavaScript file must contain the <script> tag.",
-        choices: ["False", "True"],
+        choices: ["True", "False"],
         answer: "False"
     },
     {
         question: "How do you write 'Hello World' in an alert box?",
         choices: ["msgBox('Hello World');", "msg('Hello World');", "alertBox('Hello World');", "alert('Hello World');"],
         answer: "alert('Hello World');"
+    },
+    {
+        question: "Which of the following is the correct way to increment by 1?",
+        choices: ["i =+ 1", "i += 1", "i = i++1", "+i+"],
+        answer: "i += 1"
+    },
+    {
+        question: "Which of the following is NOT a reserved word in JavaScript?",
+        choices: ["interface", "throws", "program", "short"],
+        answer: "program"
+    },
+    {
+        question: "Which of these is not a comparison operator?",
+        choices: ["<", ">", "=", "!="],
+        answer: "="
+    },
+    {
+        question: "How do you create a function in JavaScript?",
+        choices: ["function:myFunction()", "function = myFunction()", "function myFunction()"],
+        answer: "function myFunction()"
     }
 ];
 
@@ -134,7 +154,7 @@ function createQuizUI() {
 
             if (userChoice === questions[quizId]["answer"]) {
                 console.log("Correct!");
-                userScore += 5;
+                userScore += 10;
                 console.log(userScore);
             } else {
                 // Subtract from time
