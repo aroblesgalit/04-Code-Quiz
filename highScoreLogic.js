@@ -5,8 +5,7 @@ var clearScoreButton = document.getElementById("clearScoreButton");
 
 
 // Event listeners
-// submitScoreButton.addEventListener("click", submitScore);
-clearScoreButton.addEventListener("click", clearScore);
+
 
 
 // Function that takes in the score and adds it to the highscores list
@@ -43,11 +42,6 @@ clearScoreButton.addEventListener("click", clearScore);
 //     scoreListUl.appendChild(scoreListItemLi);
 // }
 
-
-// Function to clear score
-function clearScore() {
-    scoreListUl.innerHTML = "";
-}
 
 
 /////////////////////////////////////////////// NEW SOLUTION
@@ -140,4 +134,20 @@ submitScoreButton.addEventListener("click", function(event) {
     // Store updated highscoresArray in localStorage, re-render the array
     storeHighscores();
     renderHighscores();
+
+    // View highscores screen
+    viewHighscores();
 });
+
+// When clear highscores button is clicked
+clearScoreButton.addEventListener("click", clearScore);
+
+// Function to clear score
+function clearScore() {
+    // Empty out the array
+    highscoresArray = [];
+
+    // Store updated array in localStorage, re-render the list
+    storeHighscores();
+    renderHighscores();
+}
