@@ -32,7 +32,12 @@ THEN I can save my initials and score
 ```
 
 ## Screenshots
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+![Home](https://github.com/aroblesgalit/04-Code-Quiz/blob/master/Assets/Images/screenshot-home.jpg)
+![Quiz UI](https://github.com/aroblesgalit/04-Code-Quiz/blob/master/Assets/Images/screenshot-quiz-ui.jpg)
+![Quiz UI - Feedback](https://github.com/aroblesgalit/04-Code-Quiz/blob/master/Assets/Images/screenshot-quiz-ui-feedback.jpg)
+![Done](https://github.com/aroblesgalit/04-Code-Quiz/blob/master/Assets/Images/screenshot-done.jpg)
+![Highscores](https://github.com/aroblesgalit/04-Code-Quiz/blob/master/Assets/Images/screenshot-highscores.jpg)
+![Highscores - Clear](https://github.com/aroblesgalit/04-Code-Quiz/blob/master/Assets/Images/screenshot-highscores-clear.jpg)
 
 ## Deployed Application
 [Code Quiz](https://aroblesgalit.github.io/04-Code-Quiz/)
