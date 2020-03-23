@@ -168,8 +168,11 @@ function createQuizUI() {
                     timeLeft -= 10;
                     // Update displayed time
                     time.textContent = timeLeft;
+                    // Display feedback
+                    displayFeedback();
                 } else if (timeLeft <= 10) {
                     timeLeft = 0;
+                    displayFeedback();
                     // Display Done screen
                     viewDoneScreen();
                     time.textContent = "00";
@@ -177,9 +180,6 @@ function createQuizUI() {
                     clearInterval(interval);
                 }
             }
-
-            // Display feedback
-            displayFeedback();
 
             // Increment quizNum and quizId by 1
             quizNum++;
@@ -208,16 +208,6 @@ function displayScore() {
 function displayFeedback() {
     // Target the feedback div
     var quizFeedbackDiv = document.querySelector(".quizFeedback");
-    var quizFeedbackText = document.querySelector(".quizFeedbackText");
-
-    if (userChoice === questions[quizId]["answer"]) {
-        quizFeedbackText.style.color = "#62D872";
-        quizFeedbackDiv.textContent = "Correct!";
-    } else {
-        quizFeedbackText.style.color = "#D86262";
-        quizFeedbackDiv.textContent = "Wrong! (-10s)";
-    }
-
     // Add the "show" class to div
     quizFeedbackDiv.classList.add("show");
     // After 3 seconds, remove the show class from the div
