@@ -73,6 +73,8 @@ submitScoreButton.addEventListener("click", function (event) {
 
 // Create quiz ui divs dynamically and append to body, then insert question
 function createQuizUI() {
+    // Clear quiz contents
+    quizUI.innerHTML = "";
 
     // Switch to Done screen when no more questions available
     if (quizNum > quizNumTotal) {

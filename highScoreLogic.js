@@ -4,18 +4,15 @@ var scoreListUl = document.getElementById("scoreList");
 var clearScoreButton = document.getElementById("clearScoreButton");
 
 
-
 // Create variables
 var highscoresArray = []; // Array of objects [{name: "John Doe", score: 65}, {name: "Alice Wonderland", score: 55}]
-var scoreListCount = highscoresArray.length; // To use for list limit
 
 highscoreInit();
 
 // Function to render highscoresArray
 function renderHighscores() {
-    // Clear the scoreList and update list count
+    // Clear the scoreList
     scoreListUl.innerHTML = "";
-    scoreListCount = highscoresArray.length;
 
     // Render a new li for each highscore
     createScoreListItem();
@@ -84,15 +81,16 @@ submitScoreButton.addEventListener("click", function (event) {
     // Add new name and score to object and push into array
     userData["name"] = name;
     userData["score"] = score;
-    highscoresArray.push(userData);
+    highscoresArray.push(userData);     
     
+
+    // Sort highscores array
+    sortHighscores();
+
     // Function to limit the length of highscores array
     if (highscoresArray.length > 3) {
         highscoresArray.length = 3;
     }
-
-    // Sort highscores array
-    sortHighscores();
 
     // Store updated highscoresArray in localStorage, re-render the array
     storeHighscores();
