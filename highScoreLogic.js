@@ -69,10 +69,10 @@ function storeHighscores() {
 
 
 // When score is submitted
-submitScoreButton.addEventListener("click", function(event) {
+submitScoreButton.addEventListener("click", function (event) {
     event.preventDefault();
 
-    var userData = {name: "", score: 0}
+    var userData = { name: "", score: 0 }
     var name = userNameInput.value.trim();
     var score = parseInt(timeLeft);
 
@@ -85,6 +85,11 @@ submitScoreButton.addEventListener("click", function(event) {
     userData["name"] = name;
     userData["score"] = score;
     highscoresArray.push(userData);
+    
+    // Function to limit the length of highscores array
+    if (highscoresArray.length > 3) {
+        highscoresArray.length = 3;
+    }
 
     // Sort highscores array
     sortHighscores();
@@ -115,7 +120,7 @@ function clearScore() {
 
 // Function to re-order the array
 function sortHighscores() {
-    highscoresArray.sort(function(a, b) {
+    highscoresArray.sort(function (a, b) {
         var userA = a.score;
         var userB = b.score;
 
