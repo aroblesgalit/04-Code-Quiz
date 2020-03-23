@@ -17,6 +17,8 @@ startButton.addEventListener("click", startQuiz);
 backButton.addEventListener("click", init);
 
 
+init();
+
 // Start quiz function
 function startQuiz() {
     // View Quiz UI contents
