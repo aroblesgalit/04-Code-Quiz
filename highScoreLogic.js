@@ -4,7 +4,7 @@ var scoreListUl = document.getElementById("scoreList");
 var clearScoreButton = document.getElementById("clearScoreButton");
 
 // Create variables
-var position = 1; // index of user's object + 1 Hard coded for now, but it should equal user's position based on score
+var position = 1; // index of user's object + 1 Hard coded for now, but it should equal user's position based on score after reordering the aray
 var highscoresArray = []; // Array of objects [{name: "John Doe", score: 65}, {name: "Alice Wonderland", score: 55}] -- then use a method to order them
 
 // Event listeners
@@ -14,8 +14,9 @@ clearScoreButton.addEventListener("click", clearScore);
 
 // Function that takes in the score and adds it to the highscores list
 function submitScore() {
-    // Push user input into highscoresArray
-        // highscoresArray.push();
+    // Add user input into an object
+    // Push user input object into highscoresArray
+    // Reorder array
     // Create li element -- can be a function
     createScoreListItem();
     // Show high score screen
