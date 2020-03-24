@@ -41,6 +41,8 @@ function startTimer() {
             time.textContent = timeLeft;
         } else {
             time.textContent = "0" + timeLeft;
+            // Set color to red
+            time.style.color = "#D86262";
         }
 
         if (timeLeft === 0) {
@@ -107,6 +109,7 @@ function init() {
     // Stop timer and set it back to default
     clearInterval(interval);
     time.textContent = 75;
+    time.style.color = "#D9E1E8";
     // Reset variables
     quizNum = 1;
     quizId = 0;

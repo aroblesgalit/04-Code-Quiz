@@ -232,7 +232,8 @@ header {
     background-color: #282C37;
     padding: 0 30px;
     height: 80px;
-    display: none; /* flex or none */
+    visibility: hidden;
+    display: none;
     align-items: center;
     position: fixed;
     bottom: 30px;
@@ -242,6 +243,7 @@ header {
 }
 
 .quizFeedback.show {
+    visibility: visible;
     display: flex;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
