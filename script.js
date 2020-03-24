@@ -8,6 +8,7 @@ var startButton = document.getElementById("startButton");
 var backButton = document.getElementById("backButton");
 var time = document.getElementById("time");
 var doneScreen = document.getElementById("done");
+var userName = document.getElementById("userName");
 
 
 // Logic for when things are clicked
@@ -45,6 +46,8 @@ function startTimer() {
 
         if (timeLeft === 0) {
             clearInterval(interval)
+            // Disable input field
+            userName.disabled = true;
             // Switch to done screen
             viewDoneScreen();
         }
@@ -113,6 +116,8 @@ function init() {
     clearInterval(interval);
     time.textContent = 75;
     time.style.color = "#D9E1E8";
+    // Enable input field
+    userName.disabled = false;
     // Reset variables
     quizNum = 1;
     quizId = 0;
