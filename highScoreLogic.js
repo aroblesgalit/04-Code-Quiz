@@ -7,6 +7,7 @@ var clearScoreButton = document.getElementById("clearScoreButton");
 // Create variables
 var highscoresArray = []; // Array of objects [{name: "John Doe", score: 65}, {name: "Alice Wonderland", score: 55}]
 
+// Initialize highscores
 highscoreInit();
 
 // Function to render highscoresArray
@@ -22,7 +23,7 @@ function renderHighscores() {
 function createScoreListItem() {
     for (var i = 0; i < highscoresArray.length; i++) {
         var highscore = highscoresArray[i];
-
+        // Create elements, set attributes, and uadd text content
         var scoreListItemLi = document.createElement("li");
         scoreListItemLi.setAttribute("class", "scoreListItem");
         scoreListItemLi.setAttribute("data-index", i);
@@ -68,7 +69,7 @@ function storeHighscores() {
 // When score is submitted
 submitScoreButton.addEventListener("click", function (event) {
     event.preventDefault();
-
+    // Create an object for user with their name and score
     var userData = { name: "", score: 0 }
     var name = userNameInput.value.trim();
     var score = parseInt(timeLeft);
@@ -87,7 +88,7 @@ submitScoreButton.addEventListener("click", function (event) {
     // Sort highscores array
     sortHighscores();
 
-    // Function to limit the length of highscores array
+    // Limit the length of highscores array to only 3
     if (highscoresArray.length > 3) {
         highscoresArray.length = 3;
     }
