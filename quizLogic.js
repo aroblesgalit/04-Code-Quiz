@@ -152,10 +152,10 @@ function createQuizUI() {
     quizAnswerChoicesUl.addEventListener("click", function (event) {
 
         if (event.target.matches("li")) {
-            
+            // Target user's choice text
             var userChoicePlusLetter = event.target.textContent;
             var userChoice = userChoicePlusLetter.substring(1, userChoicePlusLetter.length + 1);
-
+            // Turn time in timer to integer
             timeLeft = parseInt(time.textContent);
             if (userChoice === questions[quizId]["answer"]) {
                 // If correct answer, time works regularly
@@ -194,7 +194,7 @@ function createQuizUI() {
             // Remove previous quiz ui
             questionWrapperDiv.remove();
             quizAnswerChoicesUl.remove();
-            // Create next quiz ui
+            // Create next quiz ui only when there is more questions
             if (quizNum < quizNumTotal ) {
                 createQuizUI();
             } else {
