@@ -96,6 +96,9 @@ submitScoreButton.addEventListener("click", function (event) {
     storeHighscores();
     renderHighscores();
 
+    // Clear username input
+    clearInput();
+
     // View highscores screen
     viewHighscores();
 });
@@ -124,4 +127,9 @@ function sortHighscores() {
 
         return userB - userA;
     });
+}
+
+// Function to clear the userName input field
+function clearInput() {
+    userNameInput.value = "";
 }
