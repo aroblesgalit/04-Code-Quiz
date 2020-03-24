@@ -41,14 +41,17 @@ function startTimer() {
             time.textContent = timeLeft;
         } else {
             time.textContent = "0" + timeLeft;
-            // Set color to red
-            time.style.color = "#D86262";
         }
 
         if (timeLeft === 0) {
             clearInterval(interval)
             // Switch to done screen
             viewDoneScreen();
+        }
+
+        if (timeLeft <= 10) {
+            // Set color to red
+            time.style.color = "#D86262";
         }
 
     }, 1000);
