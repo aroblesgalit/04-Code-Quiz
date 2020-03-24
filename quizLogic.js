@@ -161,18 +161,14 @@ function createQuizUI() {
             timeLeft = parseInt(time.textContent);
             if (userChoice === questions[quizId]["answer"]) {
                 time.textContent = timeLeft;
-                // displayFeedback();
             } else {
                 // Subtract from time
                 if (timeLeft > 10) {
                     timeLeft -= 10;
                     // Update displayed time
                     time.textContent = timeLeft;
-                    // Display feedback
-                    displayFeedback();
                 } else if (timeLeft <= 10) {
                     timeLeft = 0;
-                    displayFeedback();
                     // Display Done screen
                     viewDoneScreen();
                     time.textContent = "00";
@@ -180,6 +176,19 @@ function createQuizUI() {
                     clearInterval(interval);
                 }
             }
+
+            // Target the quizFeedbackText span
+            var quizFeedbackTextSpan = document.querySelector(".quizFeedbackText");
+            // Change feedback depending on user choice 
+            if (userChoice === questions[quizId]["answer"]) {
+                quizFeedbackTextSpan.style.color = "#62D872";
+                quizFeedbackTextSpan.textContent = "Correct!";
+            } else {
+                quizFeedbackTextSpan.style.color = "#D86262";
+                quizFeedbackTextSpan.textContent = "Wrong! (-10s)";
+            }
+            // Display feedback
+            displayFeedback();
 
             // Increment quizNum and quizId by 1
             quizNum++;
@@ -211,7 +220,7 @@ function displayFeedback() {
     // Add the "show" class to div
     quizFeedbackDiv.classList.add("show");
     // After 3 seconds, remove the show class from the div
-    setTimeout(function() {
+    setTimeout(function () {
         quizFeedbackDiv.classList.remove("show");
     }, 3000);
 }
