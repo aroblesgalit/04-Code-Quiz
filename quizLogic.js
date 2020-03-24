@@ -6,7 +6,7 @@ var questions = [
         answer: "<script>"
     },
     {
-        question: "What is the correct format for a comment in JavaScript",
+        question: "What is the correct format for a comment in JavaScript?",
         choices: ["{#...#}", "<!--...-->", "//...", "\\..."],
         answer: "<!--...-->"
     },
@@ -21,7 +21,7 @@ var questions = [
         answer: "<script src='xxx.js'>"
     },
     {
-        question: "The external JavaScript file must contain the <script> tag.",
+        question: "The external JavaScript file must contain the script tag.",
         choices: ["True", "False"],
         answer: "False"
     },
