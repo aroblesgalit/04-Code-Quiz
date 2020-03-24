@@ -78,10 +78,8 @@ function createQuizUI() {
 
     // Switch to Done screen when no more questions available
     if (quizNum > quizNumTotal) {
-        // Show done screen
-        viewDoneScreen();
-        // Stop timer
-        stopTimer();
+        // Stop quiz
+        stopQuiz();
     }
 
 
@@ -154,32 +152,32 @@ function createQuizUI() {
     quizAnswerChoicesUl.addEventListener("click", function (event) {
 
         if (event.target.matches("li")) {
-            // If correct answer then add to userScore
+            
             var userChoicePlusLetter = event.target.textContent;
             var userChoice = userChoicePlusLetter.substring(1, userChoicePlusLetter.length + 1);
 
             timeLeft = parseInt(time.textContent);
             if (userChoice === questions[quizId]["answer"]) {
+                // If correct answer, time works regularly
                 time.textContent = timeLeft;
             } else {
-                // Subtract from time
+                // If wrong answer, subtract 10 seconds from time
                 if (timeLeft > 10) {
                     timeLeft -= 10;
                     // Update displayed time
                     time.textContent = timeLeft;
                 } else if (timeLeft <= 10) {
                     timeLeft = 0;
-                    // Display Done screen
-                    viewDoneScreen();
                     time.textContent = "00";
-                    // Stop timer
-                    clearInterval(interval);
+                    // Stop quiz
+                    stopQuiz();
                 }
             }
 
+            // Logic for displaying feedback
             // Target the quizFeedbackText span
             var quizFeedbackTextSpan = document.querySelector(".quizFeedbackText");
-            // Change feedback depending on user choice 
+            // Change feedback color and text depending on user choice 
             if (userChoice === questions[quizId]["answer"]) {
                 quizFeedbackTextSpan.style.color = "#62D872";
                 quizFeedbackTextSpan.textContent = "Correct!";
@@ -197,7 +195,13 @@ function createQuizUI() {
             questionWrapperDiv.remove();
             quizAnswerChoicesUl.remove();
             // Create next quiz ui
-            createQuizUI();
+            if (quizNum < quizNumTotal ) {
+                createQuizUI();
+            } else {
+                // Stop quiz
+                stopQuiz();
+            }
+            
         }
     });
 }

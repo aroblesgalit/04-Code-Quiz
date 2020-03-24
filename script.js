@@ -54,6 +54,14 @@ function startQuiz() {
     startTimer();
 }
 
+// Stop quiz function
+function stopQuiz() {
+    // Stop timer
+    stopTimer();
+    // Display Done screen
+    viewDoneScreen();
+}
+
 
 // Timer logic
 var interval;
@@ -73,9 +81,7 @@ function startTimer() {
         }
         // Stop time when it reaches 0 and switch to the done screen
         if (timeLeft === 0) {
-            stopTimer();
-            // Switch to done screen
-            viewDoneScreen();
+            stopQuiz();
         }
         // At 10 seconds left, change color to red
         if (timeLeft <= 10) {
