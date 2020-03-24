@@ -340,6 +340,10 @@ to {bottom: 0; opacity: 0;}
     border-bottom: 2px solid #D9E1E8;
 }
 
+#userName:disabled {
+    background: black;
+}
+
 #scoreSubmitForm {
     display: flex;
     flex-direction: column;

@@ -20,6 +20,32 @@ backButton.addEventListener("click", init);
 
 init();
 
+// Init function
+function init() {
+    // Display Home contents
+    homeScreen.style.display = "block";
+    // Change body background color
+    document.body.style.backgroundColor = "#2B90D9";
+    // Hide Highscores contents
+    hideHighscores();
+    // Hide branding
+    hideBranding();
+    // View HIGHSCORES button
+    viewHighscoresButton();
+    // Hide Quiz UI contents
+    hideQuizUI();
+    // Hide Done contents
+    hideDoneScreen();
+    // Stop timer and set it back to default
+    clearInterval(interval);
+    time.textContent = 75;
+    time.style.color = "#D9E1E8";
+    // Reset variables
+    quizNum = 1;
+    quizId = 0;
+}
+
+
 // Start quiz function
 function startQuiz() {
     // View Quiz UI contents
@@ -29,37 +55,37 @@ function startQuiz() {
 }
 
 
-
 // Timer logic
 var interval;
 var timeLeft;
 function startTimer() {
+    // Turn time text content to an integer
     timeLeft = parseInt(time.textContent);
+    // Set timer
     interval = setInterval(function () {
-
+        // Decrement time by 1 second at a time
         timeLeft--;
+        // Display time every second
         if (timeLeft >= 10) {
             time.textContent = timeLeft;
         } else {
             time.textContent = "0" + timeLeft;
         }
-
+        // Stop time when it reaches 0 and switch to the done screen
         if (timeLeft === 0) {
-            clearInterval(interval)
-            // Disable input field
-            userName.disabled = true;
+            stopTimer();
             // Switch to done screen
             viewDoneScreen();
         }
-
+        // At 10 seconds left, change color to red
         if (timeLeft <= 10) {
             // Set color to red
             time.style.color = "#D86262";
         }
-
     }, 1000);
 }
 
+// Funciton to stop timer
 function stopTimer() {
     clearInterval(interval);
 }
@@ -97,32 +123,6 @@ function viewHighscores() {
     hideDoneScreen();
 }
 
-function init() {
-    // Display Home contents
-    homeScreen.style.display = "block";
-    // Change body background color
-    document.body.style.backgroundColor = "#2B90D9";
-    // Hide Highscores contents
-    hideHighscores();
-    // Hide branding
-    hideBranding();
-    // View HIGHSCORES button
-    viewHighscoresButton();
-    // Hide Quiz UI contents
-    hideQuizUI();
-    // Hide Done contents
-    hideDoneScreen();
-    // Stop timer and set it back to default
-    clearInterval(interval);
-    time.textContent = 75;
-    time.style.color = "#D9E1E8";
-    // Enable input field
-    userName.disabled = false;
-    // Reset variables
-    quizNum = 1;
-    quizId = 0;
-}
-
 function viewQuizScreen() {
     // Display Quiz contents
     quizUI.style.display = "block";
@@ -149,7 +149,7 @@ function viewDoneScreen() {
 
 
 
-// Functions for hiding buttons
+// Functions for hiding buttons in the heading
 function hideHighscoresButton() {
     highscoresButton.style.display = "none";
 }
@@ -159,8 +159,7 @@ function hideBranding() {
 }
 
 
-// Functions for viewing buttons
-
+// Functions for viewing buttons in the heading
 function viewHighscoresButton() {
     highscoresButton.style.display = "block";
 }
